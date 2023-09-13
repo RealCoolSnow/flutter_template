@@ -1,4 +1,4 @@
-package com.hellohasan.flutter_getx_template
+package com.hellohasan.flutter_template
 
 import io.flutter.embedding.android.FlutterActivity
 

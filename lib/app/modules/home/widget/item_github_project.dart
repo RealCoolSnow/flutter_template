@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_getx_template/app/core/widget/ripple.dart';
+import 'package:flutter_template/app/core/widget/ripple.dart';
 import 'package:get/get.dart';
 
 import '/app/core/base/base_widget_mixin.dart';
