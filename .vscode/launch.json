@@ -8,21 +8,24 @@
             "name": "flutter_template (dev)",
             "request": "launch",
             "type": "dart",
-            "program": "${workspaceFolder}//lib//main_dev.dart"
+            "program": "lib/main_dev.dart",
+            "args": ["--flavor", "dev", "--target", "lib/main_dev.dart" ]
         },
         {
             "name": "flutter_template (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile",
-            "program": "${workspaceFolder}//lib//main_dev.dart"
+            "program": "lib/main_dev.dart",
+            "args": ["--flavor", "dev", "--target", "lib/main_dev.dart" ]
         },
         {
             "name": "flutter_template (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release",
-            "program": "${workspaceFolder}//lib//main_dev.dart"
+            "program": "lib/main_dev.dart",
+            "args": ["--flavor", "dev", "--target", "lib/main_dev.dart" ]
         }
     ]
 }
