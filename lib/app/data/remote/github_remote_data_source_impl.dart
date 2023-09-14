@@ -4,7 +4,7 @@ import '/app/core/base/base_remote_source.dart';
 import '/app/core/model/github_search_query_param.dart';
 import '/app/data/model/github_project_search_response.dart';
 import '/app/data/remote/github_remote_data_source.dart';
-import '/app/network/dio_provider.dart';
+import '../../../services/base/network/dio_provider.dart';
 
 class GithubRemoteDataSourceImpl extends BaseRemoteSource
     implements GithubRemoteDataSource {

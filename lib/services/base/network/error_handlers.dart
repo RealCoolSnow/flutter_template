@@ -3,16 +3,15 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 
-import '/app/network/exceptions/api_exception.dart';
-import '/app/network/exceptions/app_exception.dart';
-import '/app/network/exceptions/not_found_exception.dart';
-import '/app/network/exceptions/service_unavailable_exception.dart';
+import 'exceptions/api_exception.dart';
+import 'exceptions/app_exception.dart';
+import 'exceptions/not_found_exception.dart';
+import 'exceptions/service_unavailable_exception.dart';
 import '/flavors/build_config.dart';
 import 'exceptions/network_exception.dart';
 
 Exception handleError(String error) {
-  final logger = BuildConfig.instance.config.logger;
-  logger.e("Generic exception: $error");
+  $logger.e("Generic exception: $error");
 
   return AppException(message: error);
 }
@@ -39,8 +38,6 @@ Exception handleDioError(DioException dioError) {
 }
 
 Exception _parseDioErrorResponse(DioException dioError) {
-  final logger = BuildConfig.instance.config.logger;
-
   int statusCode = dioError.response?.statusCode ?? -1;
   String? status;
   String? serverMessage;
@@ -52,8 +49,8 @@ Exception _parseDioErrorResponse(DioException dioError) {
     status = dioError.response?.data["status"];
     serverMessage = dioError.response?.data["message"];
   } catch (e, s) {
-    logger.i("$e");
-    logger.i(s.toString());
+    $logger.i("$e");
+    $logger.i(s.toString());
 
     serverMessage = "Something went wrong. Please try again later.";
   }

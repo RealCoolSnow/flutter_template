@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import '/generated/assets.gen.dart';
 import 'package:get/get.dart';
-import '../../../../generated/assets.gen.dart';
+
 import '/app/core/base/base_view.dart';
 import '/app/core/values/app_colors.dart';
 import '/app/core/values/app_values.dart';

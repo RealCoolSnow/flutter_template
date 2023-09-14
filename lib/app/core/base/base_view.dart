@@ -2,19 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
-import 'package:logger/logger.dart';
-
 import '/app/core/base/base_controller.dart';
 import '/app/core/model/page_state.dart';
 import '/app/core/values/app_colors.dart';
 import '/app/core/widget/loading.dart';
-import '/flavors/build_config.dart';
 
 abstract class BaseView<Controller extends BaseController>
     extends GetView<Controller> {
   final GlobalKey<ScaffoldState> globalKey = GlobalKey<ScaffoldState>();
-
-  final Logger logger = BuildConfig.instance.config.logger;
 
   Widget body(BuildContext context);
 

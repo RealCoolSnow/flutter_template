@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import '/app/network/exceptions/base_api_exception.dart';
+import 'base_api_exception.dart';
 
 class ServiceUnavailableException extends BaseApiException {
   ServiceUnavailableException(String message)

@@ -1,20 +1,18 @@
 import 'dart:async';
 import 'package:get/get.dart';
-import 'package:logger/logger.dart';
 
 import '/app/core/model/page_state.dart';
-import '/app/network/exceptions/api_exception.dart';
-import '/app/network/exceptions/app_exception.dart';
-import '/app/network/exceptions/json_format_exception.dart';
-import '/app/network/exceptions/network_exception.dart';
-import '/app/network/exceptions/not_found_exception.dart';
-import '/app/network/exceptions/service_unavailable_exception.dart';
-import '/app/network/exceptions/unauthorize_exception.dart';
+import '../../../services/base/network/exceptions/api_exception.dart';
+import '../../../services/base/network/exceptions/app_exception.dart';
+import '../../../services/base/network/exceptions/json_format_exception.dart';
+import '../../../services/base/network/exceptions/network_exception.dart';
+import '../../../services/base/network/exceptions/not_found_exception.dart';
+import '../../../services/base/network/exceptions/service_unavailable_exception.dart';
+import '../../../services/base/network/exceptions/unauthorize_exception.dart';
 import '/flavors/build_config.dart';
 
 abstract class BaseController extends GetxController {
-  final Logger logger = BuildConfig.instance.config.logger;
-
+  
   final logoutController = false.obs;
 
   //Reload the page
@@ -100,7 +98,7 @@ abstract class BaseController extends GetxController {
       showErrorMessage(exception.message);
     } catch (error) {
       _exception = AppException(message: "$error");
-      logger.e("Controller>>>>>> error $error");
+      $logger.e("Controller>>>>>> error $error");
     }
 
     if (onError != null) onError(_exception);

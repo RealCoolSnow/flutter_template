@@ -36,8 +36,8 @@ dart_code_metrics:
     - ios/**
     - android/**
   rules:
-    newline-before-return:
-      severity: error
+    # newline-before-return:
+    #   severity: error
     no-boolean-literal-compare:
       severity: warning
     no-empty-block:

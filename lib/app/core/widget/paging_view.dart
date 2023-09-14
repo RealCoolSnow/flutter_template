@@ -1,7 +1,6 @@
+import 'package:common/utils/debouncer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-
-import '/app/core/utils/debouncer.dart';
 import '/app/core/values/app_values.dart';
 
 ///ignore: must_be_immutable

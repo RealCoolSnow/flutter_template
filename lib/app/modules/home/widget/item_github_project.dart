@@ -1,6 +1,6 @@
-import 'package:flutter_template/app/common_import.dart';
+import '/app/common_import.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_template/app/core/widget/ripple.dart';
+import '/app/core/widget/ripple.dart';
 import '/app/core/base/base_widget_mixin.dart';
 import '/app/core/values/app_colors.dart';
 import '/app/core/values/app_values.dart';

@@ -1,4 +1,4 @@
-import '/app/network/exceptions/base_api_exception.dart';
+import 'base_api_exception.dart';
 
 class ApiException extends BaseApiException {
   ApiException({

@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_template/flavors/environment.dart';
+import '/flavors/environment.dart';
 
-import '/app/network/pretty_dio_logger.dart';
-import '/app/network/request_headers.dart';
+import 'pretty_dio_logger.dart';
+import 'request_headers.dart';
 import '/flavors/build_config.dart';
 
 class DioProvider {

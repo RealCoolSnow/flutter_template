@@ -11,7 +11,9 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  cupertino_icons: ^1.0.4
+  # cupertino_icons: ^1.0.4
+  common:
+    path: ./modules/common
   # https://pub-web.flutter-io.cn/packages/get
   get: ^4.6.6
   # https://pub-web.flutter-io.cn/packages/flutter_svg

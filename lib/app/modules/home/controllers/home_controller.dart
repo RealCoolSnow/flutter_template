@@ -1,3 +1,4 @@
+import '/flavors/build_config.dart';
 import 'package:get/get.dart';
 
 import '/app/core/base/base_controller.dart';
@@ -45,7 +46,7 @@ class HomeController extends BaseController {
   }
 
   onLoadNextPage() {
-    logger.i("On load next");
+    $logger.i("On load next");
 
     getGithubGetxProjectList();
   }

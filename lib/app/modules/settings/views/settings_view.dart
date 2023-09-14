@@ -1,4 +1,4 @@
-import 'package:flutter_template/app/common_import.dart';
+import '/app/common_import.dart';
 import 'package:flutter/material.dart';
 import '/app/modules/settings/widgets/item_settings_widgets.dart';
 import '/app/core/base/base_view.dart';

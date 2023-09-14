@@ -1,7 +1,7 @@
-import 'package:flutter_template/app/common_import.dart';
+import '/app/common_import.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_template/generated/assets.gen.dart';
+import '/generated/assets.gen.dart';
 import '/app/core/values/app_colors.dart';
 import '/app/core/values/app_values.dart';
 import '/app/modules/main/controllers/bottom_nav_controller.dart';
