@@ -64,16 +64,16 @@ class BottomNavBar extends StatelessWidget {
   List<BottomNavItem> _getNavItems() {
     return [
       BottomNavItem(
-        navTitle: $locale.t("bottomNavHome"),
+        navTitle: $locale.t("home"),
         iconSvgPath: Assets.images.tabIcons.icHome.path,
         menuCode: MenuCode.HOME,
       ),
       BottomNavItem(
-          navTitle: $locale.t("bottomNavFavorite"),
+          navTitle: $locale.t("favorite"),
           iconSvgPath: Assets.images.tabIcons.icFavorite.path,
           menuCode: MenuCode.FAVORITE),
       BottomNavItem(
-          navTitle: $locale.t("bottomNavSettings"),
+          navTitle: $locale.t("settings"),
           iconSvgPath: Assets.images.tabIcons.icSettings.path,
           menuCode: MenuCode.SETTINGS)
     ];

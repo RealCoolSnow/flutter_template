@@ -9,7 +9,7 @@ const enUS_l = Locale('en', 'US');
 final $locale = AppLocale();
 
 class AppLocale {
-  static const path = 'assets/locale';
+  static const path = 'assets/locales';
   static const supportedLocales = [zhCN_1, enUS_l];
   AppLocaleSupported currentLocale = AppLocaleSupported.zhCN;
   Widget wrapApp(Widget appMain) {

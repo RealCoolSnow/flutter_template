@@ -10,7 +10,7 @@ class SettingsView extends BaseView<SettingsController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
-      appBarTitleText: $locale.t("bottomNavSettings"),
+      appBarTitleText: $locale.t("settings"),
       isBackButtonEnabled: false,
     );
   }
@@ -20,21 +20,23 @@ class SettingsView extends BaseView<SettingsController> {
     return Column(
       children: [
         ItemSettings(
-          title: $locale.t("settingsTheme"),
+          title: $locale.t("theme"),
           prefixImage: Assets.images.icTheme.path,
           suffixImage: Assets.images.arrowForward.path,
           onTap: _onThemeItemClicked,
         ),
         _getHorizontalDivider(),
         ItemSettings(
-          title: $locale.t("settingsLanguage"),
+          title: $locale.t("language"),
           prefixImage: Assets.images.icLanguage.path,
           suffixImage: Assets.images.arrowForward.path,
-          onTap: _onLanguageItemClicked,
+          onTap: () {
+            _onLanguageItemClicked(context);
+          },
         ),
         _getHorizontalDivider(),
         ItemSettings(
-          title: $locale.t("settingsFontSize"),
+          title: $locale.t("font_size"),
           prefixImage: Assets.images.icFontSize.path,
           suffixImage: Assets.images.arrowForward.path,
           onTap: _onFontSizeItemClicked,
@@ -52,8 +54,9 @@ class SettingsView extends BaseView<SettingsController> {
     showToast('Theme: Development in progress');
   }
 
-  void _onLanguageItemClicked() {
-    showToast('Language: Development in progress');
+  void _onLanguageItemClicked(BuildContext context) {
+    // showToast('Language: Development in progress');
+    controller.switchLocale(context);
   }
 
   void _onFontSizeItemClicked() {
