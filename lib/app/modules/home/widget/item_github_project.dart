@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_template/app/core/widget/ripple.dart';
+import 'package:flutter_template/gen/assets.gen.dart';
 import 'package:get/get.dart';
 
 import '/app/core/base/base_widget_mixin.dart';
@@ -72,7 +73,7 @@ class ItemGithubProject extends StatelessWidget with BaseWidgetMixin {
     return Row(
       children: [
         IconTextWidget(
-          fileName: "ic_fork.svg",
+          filePath: Assets.images.icFork.path,
           value: dataModel.numberOfFork.toString(),
           height: AppValues.iconSize_20,
           width: AppValues.iconSize_20,

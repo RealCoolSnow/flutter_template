@@ -4,14 +4,14 @@ import 'package:flutter_svg/flutter_svg.dart';
 class AssetImageView extends StatelessWidget {
   const AssetImageView({
     Key? key,
-    required this.fileName,
+    required this.filePath,
     this.height,
     this.width,
     this.color,
     this.scale,
   }) : super(key: key);
 
-  final String fileName;
+  final String filePath;
   final double? height;
   final double? width;
   final Color? color;
@@ -23,8 +23,8 @@ class AssetImageView extends StatelessWidget {
   }
 
   Widget _getView() {
-    String mimType = fileName.split(".").last;
-    String path = "images/$fileName";
+    String mimType = filePath.split(".").last;
+    String path = filePath;
 
     if (mimType.isEmpty) {
       return Icon(

@@ -1,4 +1,4 @@
-# Flutter GetX Template (GetX, Dio, MVVM)
+# Flutter Template (GetX, Dio, MVVM)
 
 This Flutter Template using [GetX](https://pub.dev/packages/get) package for State management, routing and Dependency Injection (bindings). We are using [MVVM](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel) (Model View ViewModel) architectural pattern here. For network call we are using [Dio](https://pub.dev/packages/dio) package. We followed the recommended folder structure of GetX and used [Get CLI](https://pub.dev/packages/get_cli) command line tool for creating the folder structure.
 
@@ -49,3 +49,6 @@ password=<your keystore password>
 storeFile=<path to the keystore file>
 ```
 Then run `flutter build appbundle -t lib/main_prod.dart --flavor prod` to generate app bundle (.aab) file. To generate .apk file, run `flutter build apk -t lib/main_prod.dart --flavor prod`.
+
+# gen assets
+`fluttergen -c pubspec.yaml`

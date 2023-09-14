@@ -1,6 +1,4 @@
 import 'dart:async';
-
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get/get.dart';
 import 'package:logger/logger.dart';
 
@@ -16,8 +14,6 @@ import '/flavors/build_config.dart';
 
 abstract class BaseController extends GetxController {
   final Logger logger = BuildConfig.instance.config.logger;
-
-  AppLocalizations get appLocalization => AppLocalizations.of(Get.context!)!;
 
   final logoutController = false.obs;
 

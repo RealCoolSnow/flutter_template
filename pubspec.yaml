@@ -20,8 +20,8 @@ dependencies:
   dio: ^5.3.2
   # https://pub-web.flutter-io.cn/packages/shared_preferences
   shared_preferences: ^2.2.0
-  # https://pub-web.flutter-io.cn/packages/intl
-  intl: ^0.18.1
+  # https://pub.dev/packages/easy_localization
+  easy_localization: ^3.0.3
   # https://pub-web.flutter-io.cn/packages/cached_network_image
   cached_network_image: ^3.2.3
   # https://pub-web.flutter-io.cn/packages/animations
@@ -41,18 +41,21 @@ dev_dependencies:
   dart_code_metrics: any
   change_app_package_name: ^1.1.0
   flutter_launcher_icons: ^0.13.1
-  build_runner: any
-  flutter_gen: any
+  build_runner: ^2.1.11
+  flutter_gen_runner: ^5.3.1
+  json_serializable: 6.6.1
 
 flutter_icons:
   android: "ic_launcher"
   ios: true
-  image_path: "images/launcher_icon.png"
+  image_path: "assets/images/launcher_icon.png"
 
 flutter_gen:
   output: lib/gen/ # Optional (default: lib/gen/)
   line_length: 80 # Optional (default: 80)
 
+  assets:
+    enabled: true
   # Optional
   integrations:
     flutter_svg: true
@@ -63,25 +66,17 @@ flutter_gen:
   # colors:
   #   inputs:
   #     - assets/color/colors.xml
-
+  
 flutter:
   # generate: true
   uses-material-design: true
   assets:
+    - assets/locale/
     - assets/images/
-    - assets/images/tab-icons
+    - assets/images/tab-icons/
+    
   fonts:
     - family: Roboto
       fonts:
-        - asset: assets/fonts/Roboto-Thin.ttf
-          weight: 200
-        - asset: assets/fonts/Roboto-Light.ttf
-          weight: 200
         - asset: assets/fonts/Roboto-Regular.ttf
           weight: 200
-        - asset: assets/fonts/Roboto-Medium.ttf
-          weight: 300
-        - asset: assets/fonts/Roboto-Bold.ttf
-          weight: 600
-        - asset: assets/fonts/Roboto-Italic.ttf
-          style: italic

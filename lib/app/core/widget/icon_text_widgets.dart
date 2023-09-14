@@ -6,7 +6,7 @@ import '/app/core/widget/asset_image_view.dart';
 class IconTextWidget extends StatelessWidget {
   const IconTextWidget({
     Key? key,
-    this.fileName,
+    this.filePath,
     this.icon,
     this.value,
     this.height,
@@ -15,7 +15,7 @@ class IconTextWidget extends StatelessWidget {
     this.color,
   }) : super(key: key);
 
-  final String? fileName;
+  final String? filePath;
   final IconData? icon;
   final String? value;
   final double? height;
@@ -25,8 +25,8 @@ class IconTextWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (fileName != null) {
-      return _getImage(fileName!);
+    if (filePath != null) {
+      return _getImage(filePath!);
     } else if (icon != null) {
       return _getIcon(icon!);
     } else {
@@ -46,12 +46,12 @@ class IconTextWidget extends StatelessWidget {
     );
   }
 
-  Widget _getImage(String fileName) {
+  Widget _getImage(String filePath) {
     return Expanded(
       child: Row(
         children: [
           AssetImageView(
-            fileName: fileName,
+            filePath: filePath,
             height: height,
             width: width,
             color: color,

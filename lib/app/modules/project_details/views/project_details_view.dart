@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_template/gen/assets.gen.dart';
 import 'package:get/get.dart';
 
 import '/app/core/base/base_view.dart';
@@ -75,7 +76,7 @@ class ProjectDetailsView extends BaseView<ProjectDetailsController> {
       child: Row(
         children: [
           IconTextWidget(
-            fileName: "ic_fork.svg",
+            filePath: Assets.images.icFork.path,
             value: controller.projectUiData.numberOfFork.toString(),
             height: AppValues.iconSize_20,
             width: AppValues.iconSize_20,

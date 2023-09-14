@@ -25,7 +25,7 @@ class HomeController extends BaseController {
     pagingController.isLoadingPage = true;
 
     var queryParam = GithubSearchQueryParam(
-      searchKeyWord: 'flutter getx template',
+      searchKeyWord: 'Flutter Template',
       pageNumber: pagingController.pageNumber,
     );
 

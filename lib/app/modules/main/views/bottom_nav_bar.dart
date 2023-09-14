@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_template/app/app_locale.dart';
+import 'package:flutter_template/gen/assets.gen.dart';
 import 'package:get/get.dart';
 
 import '/app/core/values/app_colors.dart';
@@ -14,7 +15,6 @@ class BottomNavBar extends StatelessWidget {
   final Function(MenuCode menuCode) onNewMenuSelected;
 
   BottomNavBar({Key? key, required this.onNewMenuSelected}) : super(key: key);
-  late AppLocalizations appLocalization;
 
   final navController = BottomNavController();
 
@@ -22,7 +22,6 @@ class BottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    appLocalization = AppLocalizations.of(context)!;
 
     Color selectedItemColor = Colors.white;
     Color unselectedItemColor = Colors.grey;
@@ -35,7 +34,7 @@ class BottomNavBar extends StatelessWidget {
             .map(
               (BottomNavItem navItem) => BottomNavigationBarItem(
                   icon: SvgPicture.asset(
-                    "images/${navItem.iconSvgName}",
+                    navItem.iconSvgPath,
                     height: AppValues.iconDefaultSize,
                     width: AppValues.iconDefaultSize,
                     color:
@@ -65,17 +64,17 @@ class BottomNavBar extends StatelessWidget {
   List<BottomNavItem> _getNavItems() {
     return [
       BottomNavItem(
-        navTitle: appLocalization.bottomNavHome,
-        iconSvgName: "ic_home.svg",
+        navTitle: $locale.t("bottomNavHome"),
+        iconSvgPath: Assets.images.tabIcons.icHome.path,
         menuCode: MenuCode.HOME,
       ),
       BottomNavItem(
-          navTitle: appLocalization.bottomNavFavorite,
-          iconSvgName: "ic_favorite.svg",
+          navTitle: $locale.t("bottomNavFavorite"),
+          iconSvgPath: Assets.images.tabIcons.icFavorite.path,
           menuCode: MenuCode.FAVORITE),
       BottomNavItem(
-          navTitle: appLocalization.bottomNavSettings,
-          iconSvgName: "ic_settings.svg",
+          navTitle: $locale.t("bottomNavSettings"),
+          iconSvgPath: Assets.images.tabIcons.icSettings.path,
           menuCode: MenuCode.SETTINGS)
     ];
   }

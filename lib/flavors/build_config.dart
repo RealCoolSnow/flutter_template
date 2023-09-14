@@ -22,4 +22,8 @@ class BuildConfig {
 
     return instance;
   }
+
+  bool get isProd => environment == Environment.PRODUCTION;
 }
+
+final $logger = BuildConfig.instance.config.logger;
