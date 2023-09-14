@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 
 enum AppLocaleSupported { enUS, zhCN }
 
-const zhCN_1 = Locale('zh', 'CN');
-const enUS_l = Locale('en', 'US');
+const zhCN = Locale('zh', 'CN');
+const enUS = Locale('en', 'US');
 
 final $locale = AppLocale();
 
 class AppLocale {
   static const path = 'assets/locales';
-  static const supportedLocales = [zhCN_1, enUS_l];
+  static const supportedLocales = [enUS, zhCN];
   AppLocaleSupported currentLocale = AppLocaleSupported.zhCN;
   Widget wrapApp(Widget appMain) {
     return EasyLocalization(
@@ -24,10 +24,10 @@ class AppLocale {
   void switchLocale(BuildContext context, AppLocaleSupported locale) {
     switch (locale) {
       case AppLocaleSupported.enUS:
-        context.setLocale(enUS_l);
+        context.setLocale(enUS);
         break;
       case AppLocaleSupported.zhCN:
-        context.setLocale(zhCN_1);
+        context.setLocale(zhCN);
         break;
     }
     currentLocale = locale;
