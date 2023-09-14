@@ -4,5 +4,6 @@
   "settings": "设置",
   "theme": "主题",
   "language": "语言",
-  "font_size": "字体"
+  "font_size": "字体",
+  "click_me": "点我 {count}"
 }

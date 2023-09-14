@@ -1,5 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import '../generated/codegen_loader.g.dart';
 
 enum AppLocaleSupported { enUS, zhCN }
 
@@ -17,11 +20,12 @@ class AppLocale {
         supportedLocales: supportedLocales,
         path: path,
         fallbackLocale: supportedLocales[0],
-        startLocale: supportedLocales[0],
+        assetLoader: const CodegenLoader(),
+        // startLocale: supportedLocales[0],
         child: appMain);
   }
 
-  void switchLocale(BuildContext context, AppLocaleSupported locale) {
+  void setLocale(BuildContext context, AppLocaleSupported locale) {
     switch (locale) {
       case AppLocaleSupported.enUS:
         context.setLocale(enUS);
@@ -31,6 +35,7 @@ class AppLocale {
         break;
     }
     currentLocale = locale;
+    Get.updateLocale(context.locale);
   }
 
   ///
@@ -42,5 +47,5 @@ class AppLocale {
     List<String>? args,
     Map<String, String>? namedArgs,
   }) =>
-      name.tr(args: args, namedArgs: namedArgs);
+      tr(name, args: args, namedArgs: namedArgs);
 }

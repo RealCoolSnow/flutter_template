@@ -4,5 +4,6 @@
   "settings": "Settings",
   "theme": "Theme",
   "language": "Language",
-  "font_size": "Font Size"
+  "font_size": "Font Size",
+  "click_me": "Click me {count}"
 }

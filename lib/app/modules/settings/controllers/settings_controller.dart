@@ -10,7 +10,7 @@ class SettingsController extends BaseController {
   void increment() => count.value++;
 
   void switchLocale(BuildContext context) {
-    $locale.switchLocale(
+    $locale.setLocale(
         context,
         $locale.currentLocale == AppLocaleSupported.zhCN
             ? AppLocaleSupported.enUS

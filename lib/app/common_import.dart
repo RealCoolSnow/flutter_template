@@ -1,0 +1,4 @@
+export 'package:flutter_template/generated/locale_keys.g.dart';
+export 'package:flutter_template/generated/assets.gen.dart';
+export 'package:easy_localization/easy_localization.dart';
+export 'package:get/get.dart';

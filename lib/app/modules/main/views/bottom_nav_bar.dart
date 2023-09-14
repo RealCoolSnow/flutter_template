@@ -1,9 +1,7 @@
+import 'package:flutter_template/app/common_import.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_template/app/app_locale.dart';
-import 'package:flutter_template/gen/assets.gen.dart';
-import 'package:get/get.dart';
-
+import 'package:flutter_template/generated/assets.gen.dart';
 import '/app/core/values/app_colors.dart';
 import '/app/core/values/app_values.dart';
 import '/app/modules/main/controllers/bottom_nav_controller.dart';
@@ -64,16 +62,16 @@ class BottomNavBar extends StatelessWidget {
   List<BottomNavItem> _getNavItems() {
     return [
       BottomNavItem(
-        navTitle: $locale.t("home"),
+        navTitle: tr(LocaleKeys.home),
         iconSvgPath: Assets.images.tabIcons.icHome.path,
         menuCode: MenuCode.HOME,
       ),
       BottomNavItem(
-          navTitle: $locale.t("favorite"),
+          navTitle: tr(LocaleKeys.favorite),
           iconSvgPath: Assets.images.tabIcons.icFavorite.path,
           menuCode: MenuCode.FAVORITE),
       BottomNavItem(
-          navTitle: $locale.t("settings"),
+          navTitle: tr(LocaleKeys.settings),
           iconSvgPath: Assets.images.tabIcons.icSettings.path,
           menuCode: MenuCode.SETTINGS)
     ];

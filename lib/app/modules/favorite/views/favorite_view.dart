@@ -1,7 +1,5 @@
+import 'package:flutter_template/app/common_import.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
-import '../../../app_locale.dart';
 import '/app/core/base/base_view.dart';
 import '/app/core/values/text_styles.dart';
 import '/app/core/widget/custom_app_bar.dart';
@@ -11,7 +9,7 @@ class FavoriteView extends BaseView<FavoriteController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
-      appBarTitleText: $locale.t("favorite"),
+      appBarTitleText: tr(LocaleKeys.favorite),
     );
   }
 
@@ -19,10 +17,11 @@ class FavoriteView extends BaseView<FavoriteController> {
   Widget body(BuildContext context) {
     return Center(
       child: GestureDetector(
-        child: Obx(()=>Text(
-          'FavoriteView is working ${controller.count}',
-          style: titleStyle,
-        )),
+        child: Obx(() => Text(
+              tr(LocaleKeys.click_me,
+                  namedArgs: {'count': controller.count.toString()}),
+              style: titleStyle,
+            )),
         onTap: () => controller.increment(),
       ),
     );
