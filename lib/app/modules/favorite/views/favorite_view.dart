@@ -1,7 +1,7 @@
+import '../../../core/styles/app_textstyle.dart';
 import '/app/common_import.dart';
 import 'package:flutter/material.dart';
 import '/app/core/base/base_view.dart';
-import '/app/core/values/text_styles.dart';
 import '/app/core/widget/custom_app_bar.dart';
 import '/app/modules/favorite/controllers/favorite_controller.dart';
 
@@ -20,7 +20,7 @@ class FavoriteView extends BaseView<FavoriteController> {
         child: Obx(() => Text(
               tr(LocaleKeys.click_me,
                   namedArgs: {'count': controller.count.toString()}),
-              style: titleStyle,
+              style: AppTextStyle.baseBold,
             )),
         onTap: () => controller.increment(),
       ),

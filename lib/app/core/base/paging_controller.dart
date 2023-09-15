@@ -1,4 +1,4 @@
-import '/app/core/values/app_values.dart';
+import '../../../constants/app_values.dart';
 
 class PagingController<T> {
   List<T> listItems = [];

@@ -1,7 +1,8 @@
 import 'package:common/utils/debouncer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import '/app/core/values/app_values.dart';
+
+import '../styles/app_size.dart';
 
 ///ignore: must_be_immutable
 class PagingView extends StatelessWidget {
@@ -57,7 +58,7 @@ class PagingView extends StatelessWidget {
       child: Column(
         children: [
           child,
-          const SizedBox(height: AppValues.listBottomEmptySpace),
+          SizedBox(height: AppSize.listBottomEmptySpace),
         ],
       ),
     );

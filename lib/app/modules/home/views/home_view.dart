@@ -1,4 +1,4 @@
-import '/app/core/values/text_styles.dart';
+import '../../../core/styles/app_textstyle.dart';
 import '/app/common_import.dart';
 import 'package:flutter/material.dart';
 import '/app/core/base/base_view.dart';
@@ -20,7 +20,7 @@ class HomeView extends BaseView<HomeController> {
         child: Obx(() => Text(
               tr(LocaleKeys.click_me,
                   namedArgs: {'count': controller.count.toString()}),
-              style: titleStyle,
+              style: AppTextStyle.lgBold,
             )),
         onTap: () => controller.increment(),
       ),

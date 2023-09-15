@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
-import '/app/core/values/app_colors.dart';
-import '/app/core/values/app_values.dart';
+import '../styles/app_color.dart';
+import '../styles/app_size.dart';
 import '/app/core/widget/elevated_container.dart';
 
 class Loading extends StatelessWidget {
@@ -9,11 +8,11 @@ class Loading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: ElevatedContainer(
-        padding: EdgeInsets.all(AppValues.margin),
-        child: CircularProgressIndicator(
-          color: AppColors.colorPrimary,
+        padding: EdgeInsets.all(AppSize.margin),
+        child: const CircularProgressIndicator(
+          color: AppColor.primary,
         ),
       ),
     );

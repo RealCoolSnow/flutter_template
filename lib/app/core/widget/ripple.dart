@@ -1,20 +1,22 @@
+import '../styles/app_size.dart';
+import '/app/core/styles/app_color.dart';
 import 'package:flutter/material.dart';
-import '/app/core/values/app_colors.dart';
-import '/app/core/values/app_values.dart';
 
 class Ripple extends StatelessWidget {
   final Function()? onTap;
   final Widget? child;
   final Color rippleColor;
-  final double rippleRadius;
+  late final double rippleRadius;
 
-  const Ripple({
-    Key? key,
-    this.child,
-    required this.onTap,
-    this.rippleColor = AppColors.defaultRippleColor,
-    this.rippleRadius = AppValues.smallRadius,
-  }) : super(key: key);
+  Ripple(
+      {Key? key,
+      this.child,
+      required this.onTap,
+      this.rippleColor = AppColor.pageBackground,
+      double? rippleRadius})
+      : super(key: key) {
+    this.rippleRadius = rippleRadius ?? AppSize.radiusSmall;
+  }
 
   @override
   Widget build(BuildContext context) {

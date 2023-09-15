@@ -36,6 +36,8 @@ dependencies:
   fluttertoast: ^8.2.2
   # https://pub.flutter-io.cn/packages/json_annotation
   json_annotation: ^4.8.1
+  # https://pub-web.flutter-io.cn/packages/flutter_screenutil
+  flutter_screenutil: ^5.9.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -80,7 +82,9 @@ flutter:
     - assets/images/tab-icons/
     
   fonts:
-    - family: Roboto
-      fonts:
-        - asset: assets/fonts/Roboto-Regular.ttf
-          weight: 200
+      - family: Arial
+        fonts:
+          - asset: assets/fonts/Arial.ttf
+      - family: Arial-Bold
+        fonts:
+          - asset: assets/fonts/Arial-Bold.ttf

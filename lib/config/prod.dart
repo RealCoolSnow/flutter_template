@@ -4,4 +4,5 @@ EnvConfig prodConfig = EnvConfig(
   appName: "Atoshi Global Prod",
   baseUrl: "https://api.github.com",
   shouldCollectCrashLog: true,
+  shouldPrintLog: false,
 );

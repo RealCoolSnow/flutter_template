@@ -1,8 +1,8 @@
+import '/app/core/styles/app_textstyle.dart';
 import 'package:flutter/material.dart';
+import '../../../core/styles/app_size.dart';
 import '/app/core/base/base_widget_mixin.dart';
-import '/app/core/values/app_colors.dart';
-import '/app/core/values/app_values.dart';
-import '/app/core/values/text_styles.dart';
+import '../../../core/styles/app_color.dart';
 import '/app/core/widget/asset_image_view.dart';
 import '/app/core/widget/ripple.dart';
 
@@ -24,22 +24,22 @@ class ItemSettings extends StatelessWidget with BaseWidgetMixin {
     return Ripple(
       onTap: onTap,
       child: Padding(
-        padding: const EdgeInsets.all(AppValues.padding),
+        padding: EdgeInsets.all(AppSize.padding),
         child: Row(
           children: [
             AssetImageView(
               filePath: prefixImage,
-              height: AppValues.iconSize_20,
-              width: AppValues.iconSize_20,
+              height: AppSize.iconSize_20,
+              width: AppSize.iconSize_20,
             ),
-            const SizedBox(width: AppValues.smallPadding),
-            Text(title, style: settingsItemStyle),
+            SizedBox(width: AppSize.paddingSmall),
+            Text(title, style: AppTextStyle.base),
             const Spacer(),
             AssetImageView(
               filePath: suffixImage,
-              color: AppColors.suffixImageColor,
-              height: AppValues.iconSize_20,
-              width: AppValues.iconSize_20,
+              color: AppColor.secondary,
+              height: AppSize.iconSize_20,
+              width: AppSize.iconSize_20,
             ),
           ],
         ),

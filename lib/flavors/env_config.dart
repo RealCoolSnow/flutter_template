@@ -1,20 +1,21 @@
 import 'package:logger/logger.dart';
 
-import '/app/core/values/app_values.dart';
+import '../constants/app_values.dart';
 
 class EnvConfig {
   final String appName;
   final String baseUrl;
   final bool shouldCollectCrashLog;
-
+  final bool shouldPrintLog;
   late final Logger logger;
 
-  EnvConfig({
-    required this.appName,
-    required this.baseUrl,
-    this.shouldCollectCrashLog = false,
-  }) {
+  EnvConfig(
+      {required this.appName,
+      required this.baseUrl,
+      this.shouldCollectCrashLog = false,
+      this.shouldPrintLog = true}) {
     logger = Logger(
+      level: shouldPrintLog ? Level.all : Level.off,
       printer: PrettyPrinter(
           methodCount: AppValues.loggerMethodCount,
           // number of method calls to be displayed

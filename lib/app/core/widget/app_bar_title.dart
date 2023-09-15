@@ -1,6 +1,5 @@
+import '/app/core/styles/app_textstyle.dart';
 import 'package:flutter/material.dart';
-
-import '/app/core/values/text_styles.dart';
 
 class AppBarTitle extends StatelessWidget {
   final String text;
@@ -11,7 +10,7 @@ class AppBarTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: pageTitleStyle,
+      style: AppTextStyle.pageTitleStyle,
       textAlign: TextAlign.center,
     );
   }

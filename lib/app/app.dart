@@ -1,12 +1,13 @@
 import 'dart:async';
 
+import '/app/core/styles/app_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
 import '/app/bindings/initial_binding.dart';
-import '/app/core/values/app_colors.dart';
 import '/app/routes/app_pages.dart';
 import '/flavors/build_config.dart';
 import '/flavors/env_config.dart';
@@ -22,9 +23,19 @@ class App extends StatefulWidget {
 class _AppState extends State<App> {
   final EnvConfig _envConfig = BuildConfig.instance.config;
 
+  Widget wrapScreenUtil(Widget childApp) {
+    return ScreenUtilInit(
+        designSize: const Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (_, child) {
+          return childApp;
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
+    return wrapScreenUtil(GetMaterialApp(
       title: _envConfig.appName,
       initialRoute: AppPages.INITIAL,
       initialBinding: InitialBinding(),
@@ -32,22 +43,9 @@ class _AppState extends State<App> {
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,
       locale: context.locale,
-      theme: ThemeData(
-        primarySwatch: AppColors.colorPrimarySwatch,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        brightness: Brightness.light,
-        primaryColor: AppColors.colorPrimary,
-        textTheme: const TextTheme(
-          button: TextStyle(
-            color: Colors.white,
-            fontSize: 20.0,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        fontFamily: 'Roboto',
-      ),
+      theme: AppTheme.main(),
       debugShowCheckedModeBanner: false,
-    );
+    ));
   }
 }
 

@@ -1,11 +1,12 @@
+import '/app/core/styles/app_color.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import '../widget/loading.dart';
 import '/app/core/base/base_controller.dart';
 import '/app/core/model/page_state.dart';
-import '/app/core/values/app_colors.dart';
-import '/app/core/widget/loading.dart';
 
 abstract class BaseView<Controller extends BaseController>
     extends GetView<Controller> {
@@ -84,11 +85,11 @@ abstract class BaseView<Controller extends BaseController>
   }
 
   Color pageBackgroundColor() {
-    return AppColors.pageBackground;
+    return AppColor.pageBackground;
   }
 
   Color statusBarColor() {
-    return AppColors.pageBackground;
+    return AppColor.pageBackground;
   }
 
   Widget? floatingActionButton() {

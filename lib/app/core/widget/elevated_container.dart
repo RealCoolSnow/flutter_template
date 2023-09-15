@@ -1,21 +1,23 @@
-import 'package:flutter/material.dart';
+import '/app/core/styles/app_color.dart';
+import '/app/core/styles/app_size.dart';
 
-import '/app/core/values/app_colors.dart';
-import '/app/core/values/app_values.dart';
+import 'package:flutter/material.dart';
 
 class ElevatedContainer extends StatelessWidget {
   final Widget child;
-  final Color bgColor;
   final EdgeInsetsGeometry? padding;
-  final double borderRadius;
+  final Color bgColor;
+  late final double borderRadius;
 
-  const ElevatedContainer({
+  ElevatedContainer({
     Key? key,
     required this.child,
-    this.bgColor = AppColors.pageBackground,
+    this.bgColor = AppColor.primary,
     this.padding,
-    this.borderRadius = AppValues.smallRadius,
-  }) : super(key: key);
+    double? borderRadius,
+  }) : super(key: key) {
+    this.borderRadius = borderRadius ?? AppSize.radiusSmall;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +25,15 @@ class ElevatedContainer extends StatelessWidget {
       padding: padding,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(borderRadius),
-          boxShadow: [
+          boxShadow: const [
             BoxShadow(
-              color: AppColors.elevatedContainerColorOpacity,
+              color: AppColor.greyOpacity,
               spreadRadius: 3,
               blurRadius: 8,
-              offset: const Offset(0, 3), // changes position of shadow
+              offset: Offset(0, 3), // changes position of shadow
             ),
           ],
-          color: AppColors.pageBackground),
+          color: AppColor.pageBackground),
       child: child,
     );
   }

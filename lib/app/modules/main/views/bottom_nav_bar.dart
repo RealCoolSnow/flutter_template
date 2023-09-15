@@ -1,9 +1,8 @@
+import '/app/core/styles/app_size.dart';
 import '/app/common_import.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '/generated/assets.gen.dart';
-import '/app/core/values/app_colors.dart';
-import '/app/core/values/app_values.dart';
+import '../../../core/styles/app_color.dart';
 import '/app/modules/main/controllers/bottom_nav_controller.dart';
 import '/app/modules/main/model/menu_code.dart';
 import '/app/modules/main/model/menu_item.dart';
@@ -33,8 +32,8 @@ class BottomNavBar extends StatelessWidget {
               (BottomNavItem navItem) => BottomNavigationBarItem(
                   icon: SvgPicture.asset(
                     navItem.iconSvgPath,
-                    height: AppValues.iconDefaultSize,
-                    width: AppValues.iconDefaultSize,
+                    height: AppSize.iconDefaultSize,
+                    width: AppSize.iconDefaultSize,
                     color:
                         navItems.indexOf(navItem) == navController.selectedIndex
                             ? selectedItemColor
@@ -47,7 +46,7 @@ class BottomNavBar extends StatelessWidget {
         showSelectedLabels: true,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: AppColors.colorAccent,
+        backgroundColor: AppColor.primary,
         selectedItemColor: selectedItemColor,
         unselectedItemColor: unselectedItemColor,
         currentIndex: navController.selectedIndex,
