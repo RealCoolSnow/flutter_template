@@ -10,7 +10,7 @@ import '/app/core/values/app_colors.dart';
 import '/app/routes/app_pages.dart';
 import '/flavors/build_config.dart';
 import '/flavors/env_config.dart';
-import 'app_locale.dart';
+import 'core/app_locale.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);

@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../generated/codegen_loader.g.dart';
+import '../../generated/codegen_loader.g.dart';
 
 enum AppLocaleSupported { enUS, zhCN }
 
