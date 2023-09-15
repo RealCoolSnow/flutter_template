@@ -1,4 +1,4 @@
-import '/services/base/network/error_code.dart';
+import '/network/base/network/error_code.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'base_resp.g.dart';

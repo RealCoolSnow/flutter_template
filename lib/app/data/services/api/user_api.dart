@@ -1,6 +1,6 @@
-import '/services/base/http_api.dart';
-import '/services/model/response/base/base_resp.dart';
-import '/services/model/response/user/login_result_model.dart';
+import '/app/data/services/model/user/login_result_model.dart';
+import '/network/base/http_api.dart';
+import '/network/model/base/base_resp.dart';
 
 class UserApi {
   static const String API_LOGIN = "/login";

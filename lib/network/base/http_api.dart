@@ -1,4 +1,4 @@
-import '/services/model/response/base/base_resp.dart';
+import '/network/model/base/base_resp.dart';
 
 import 'http_util.dart';
 import 'network/error_code.dart';
