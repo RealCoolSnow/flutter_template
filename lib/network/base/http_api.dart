@@ -16,8 +16,8 @@ Future<BaseResp<T?>> httpRequest<T>(String path, String method,
     {postData,
     Map<String, String>? getParams,
     T Function(dynamic json)? dataParse}) async {
-  var json =
-      await HttpUtil().request(path, HttpMethod.GET, getParams: getParams);
+  var json = await HttpUtil()
+      .request(path, method, postData: postData, getParams: getParams);
   return _parseResponse(json, dataParse);
 }
 

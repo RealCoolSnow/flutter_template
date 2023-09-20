@@ -48,10 +48,8 @@ Exception _parseDioErrorResponse(DioException dioError) {
     }
     status = dioError.response?.data["status"];
     serverMessage = dioError.response?.data["message"];
-  } catch (e, s) {
+  } catch (e) {
     $logger.i("$e");
-    $logger.i(s.toString());
-
     serverMessage = "Something went wrong. Please try again later.";
   }
 

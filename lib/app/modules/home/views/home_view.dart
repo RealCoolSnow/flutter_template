@@ -1,3 +1,4 @@
+import '../../../core/styles/app_size.dart';
 import '../../../core/styles/app_textstyle.dart';
 import '/app/common_import.dart';
 import 'package:flutter/material.dart';
@@ -15,15 +16,24 @@ class HomeView extends BaseView<HomeController> {
 
   @override
   Widget body(BuildContext context) {
-    return Center(
-      child: GestureDetector(
-        child: Obx(() => Text(
-              tr(LocaleKeys.click_me,
-                  namedArgs: {'count': controller.count.toString()}),
-              style: AppTextStyle.lgBold,
-            )),
-        onTap: () => controller.increment(),
-      ),
+    return Container(
+      alignment: Alignment.center,
+      child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+        GestureDetector(
+          child: Obx(() => Text(
+                tr(LocaleKeys.click_me,
+                    namedArgs: {'count': controller.count.toString()}),
+                style: AppTextStyle.lgBold,
+              )),
+          onTap: () => controller.increment(),
+        ),
+        Padding(
+            padding: EdgeInsets.only(top: AppSize.padding),
+            child: ElevatedButton(
+              onPressed: () => controller.login(),
+              child: const Text("Login"),
+            ))
+      ]),
     );
   }
 }
