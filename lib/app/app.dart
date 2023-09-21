@@ -1,7 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter_template/app/core/styles/app_color.dart';
-
+import '/app/core/styles/app_color.dart';
 import '/app/core/styles/app_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
