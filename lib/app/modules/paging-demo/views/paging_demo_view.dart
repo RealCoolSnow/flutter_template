@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/app/core/styles/app_size.dart';
-import 'package:flutter_template/app/data/services/model/user/user_info_model.dart';
+import '/app/core/styles/app_size.dart';
+import '/app/data/services/model/user/user_info_model.dart';
 
 import 'package:get/get.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';

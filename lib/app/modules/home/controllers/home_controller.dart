@@ -1,4 +1,4 @@
-import 'package:flutter_template/app/routes/app_pages.dart';
+import '/app/routes/app_pages.dart';
 
 import '/app/data/services/api/user_api.dart';
 import 'package:get/get.dart';
