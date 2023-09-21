@@ -1,7 +1,7 @@
 import '/app/core/styles/app_textstyle.dart';
 import 'package:flutter/material.dart';
 import '../../../core/styles/app_size.dart';
-import '/app/core/base/base_widget_mixin.dart';
+import '../../../core/base/view/base_widget_mixin.dart';
 import '../../../core/styles/app_color.dart';
 import '/app/core/widget/asset_image_view.dart';
 import '/app/core/widget/ripple.dart';

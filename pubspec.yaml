@@ -38,6 +38,8 @@ dependencies:
   json_annotation: ^4.8.1
   # https://pub-web.flutter-io.cn/packages/flutter_screenutil
   flutter_screenutil: ^5.9.0
+  # https://pub-web.flutter-io.cn/packages/infinite_scroll_pagination
+  infinite_scroll_pagination: ^4.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-import '/app/core/base/base_controller.dart';
+import '../../../core/base/controller/base_controller.dart';
 import '/app/modules/main/model/menu_code.dart';
 
 class MainController extends BaseController {

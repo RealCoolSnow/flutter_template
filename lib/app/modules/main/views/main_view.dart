@@ -2,7 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '/app/core/base/base_view.dart';
+import '../../../core/base/view/base_view.dart';
 import '/app/modules/favorite/views/favorite_view.dart';
 import '/app/modules/home/views/home_view.dart';
 import '/app/modules/main/controllers/main_controller.dart';

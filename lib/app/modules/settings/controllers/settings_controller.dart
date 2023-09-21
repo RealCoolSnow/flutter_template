@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../core/app_locale.dart';
-import '/app/core/base/base_controller.dart';
+import '../../../core/base/controller/base_controller.dart';
 
 class SettingsController extends BaseController {
   final count = 0.obs;

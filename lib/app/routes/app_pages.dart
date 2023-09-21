@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
 
+import '../modules/paging-demo/bindings/paging_demo_binding.dart';
+import '../modules/paging-demo/views/paging_demo_view.dart';
 import '/app/modules/favorite/bindings/favorite_binding.dart';
 import '/app/modules/favorite/views/favorite_view.dart';
 import '/app/modules/home/bindings/home_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.OTHER,
       page: () => OtherView(),
       binding: OtherBinding(),
+    ),
+    GetPage(
+      name: _Paths.PAGING_DEMO,
+      page: () => const PagingDemoView(),
+      binding: PagingDemoBinding(),
     ),
   ];
 }
