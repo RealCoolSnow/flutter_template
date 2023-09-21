@@ -1,15 +1,13 @@
 import 'package:get/get.dart';
 
-import '../modules/paging-demo/bindings/paging_demo_binding.dart';
-import '../modules/paging-demo/views/paging_demo_view.dart';
+import '/app/modules/paging-demo/bindings/paging_demo_binding.dart';
+import '/app/modules/paging-demo/views/paging_demo_view.dart';
 import '/app/modules/favorite/bindings/favorite_binding.dart';
 import '/app/modules/favorite/views/favorite_view.dart';
 import '/app/modules/home/bindings/home_binding.dart';
 import '/app/modules/home/views/home_view.dart';
 import '/app/modules/main/bindings/main_binding.dart';
 import '/app/modules/main/views/main_view.dart';
-import '/app/modules/other/bindings/other_binding.dart';
-import '/app/modules/other/views/other_view.dart';
 import '/app/modules/settings/bindings/settings_binding.dart';
 import '/app/modules/settings/views/settings_view.dart';
 
@@ -40,11 +38,6 @@ class AppPages {
       name: _Paths.SETTINGS,
       page: () => SettingsView(),
       binding: SettingsBinding(),
-    ),
-    GetPage(
-      name: _Paths.OTHER,
-      page: () => OtherView(),
-      binding: OtherBinding(),
     ),
     GetPage(
       name: _Paths.PAGING_DEMO,

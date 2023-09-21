@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:flutter_template/app/core/styles/app_color.dart';
+
 import '/app/core/styles/app_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
@@ -33,8 +35,19 @@ class AppState extends State<App> {
         });
   }
 
+  void setOverlayStyle() {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
+      statusBarColor: AppColor.primary,
+      statusBarIconBrightness: Brightness.dark,
+      statusBarBrightness: Brightness.light,
+      systemNavigationBarColor: AppColor.primary,
+      systemNavigationBarDividerColor: AppColor.transparent,
+      systemNavigationBarIconBrightness: Brightness.light,
+    ));
+  }
   @override
   Widget build(BuildContext context) {
+    setOverlayStyle();
     return wrapScreenUtil(GetMaterialApp(
       title: _envConfig.appName,
       initialRoute: AppPages.INITIAL,

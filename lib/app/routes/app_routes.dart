@@ -8,7 +8,6 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const FAVORITE = _Paths.FAVORITE;
   static const SETTINGS = _Paths.SETTINGS;
-  static const OTHER = _Paths.OTHER;
   static const PAGING_DEMO = _Paths.PAGING_DEMO;
 }
 
@@ -17,6 +16,5 @@ abstract class _Paths {
   static const HOME = '/home';
   static const FAVORITE = '/favorite';
   static const SETTINGS = '/settings';
-  static const OTHER = '/other';
   static const PAGING_DEMO = '/paging-demo';
 }
