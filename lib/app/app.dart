@@ -17,10 +17,10 @@ class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
 
   @override
-  _AppState createState() => _AppState();
+  AppState createState() => AppState();
 }
 
-class _AppState extends State<App> {
+class AppState extends State<App> {
   final EnvConfig _envConfig = BuildConfig.instance.config;
 
   Widget wrapScreenUtil(Widget childApp) {
@@ -65,12 +65,12 @@ class AppEntry {
     // });
   }
 
-  Future<void> _reportError(dynamic error, dynamic stackTrace) async {
-    if (!BuildConfig.instance.isProd) {
-      $logger.e(stackTrace);
-    }
-    //then, report to your server
-  }
+  // Future<void> _reportError(dynamic error, dynamic stackTrace) async {
+  //   if (!BuildConfig.instance.isProd) {
+  //     $logger.e(stackTrace);
+  //   }
+  //   //then, report to your server
+  // }
 }
 
 Future<void> startApp() async {

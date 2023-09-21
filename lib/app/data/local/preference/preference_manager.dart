@@ -1,5 +1,4 @@
 abstract class PreferenceManager {
-  static const keyToken = "token";
 
   Future<String> getString(String key, {String defaultValue = ""});
 

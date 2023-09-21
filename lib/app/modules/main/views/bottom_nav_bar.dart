@@ -34,10 +34,9 @@ class BottomNavBar extends StatelessWidget {
                     navItem.iconSvgPath,
                     height: AppSize.iconDefaultSize,
                     width: AppSize.iconDefaultSize,
-                    color:
-                        navItems.indexOf(navItem) == navController.selectedIndex
+                    colorFilter: ColorFilter.mode(navItems.indexOf(navItem) == navController.selectedIndex
                             ? selectedItemColor
-                            : unselectedItemColor,
+                            : unselectedItemColor, BlendMode.srcIn)
                   ),
                   label: navItem.navTitle,
                   tooltip: ""),
