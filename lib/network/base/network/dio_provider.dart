@@ -56,7 +56,7 @@ class DioProvider {
     return _instance!;
   }
 
-  static _addInterceptors() {
+  static void _addInterceptors() {
     _instance ??= httpDio;
     _instance!.interceptors.clear();
     _instance!.interceptors.add(RequestHeaderInterceptor());

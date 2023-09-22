@@ -46,13 +46,13 @@ class PagingView extends StatelessWidget {
       child: onRefresh == null
           ? _getScrollableView()
           : RefreshIndicator(
-              child: _getScrollableView(),
               onRefresh: onRefresh!,
+              child: _getScrollableView(),
             ),
     );
   }
 
-  _getScrollableView() {
+  SingleChildScrollView _getScrollableView() {
     return SingleChildScrollView(
       controller: scrollController,
       child: Column(

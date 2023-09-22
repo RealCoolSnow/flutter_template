@@ -7,32 +7,32 @@ abstract class BaseController extends GetxController {
   //Reload the page
   final _refreshController = false.obs;
 
-  refreshPage(bool refresh) => _refreshController(refresh);
+  bool refreshPage(bool refresh) => _refreshController(refresh);
 
   //Controls page state
   final _pageSateController = PageState.DEFAULT.obs;
 
   PageState get pageState => _pageSateController.value;
 
-  updatePageState(PageState state) => _pageSateController(state);
+  PageState updatePageState(PageState state) => _pageSateController(state);
 
-  resetPageState() => _pageSateController(PageState.DEFAULT);
+  PageState resetPageState() => _pageSateController(PageState.DEFAULT);
 
-  showLoading() => updatePageState(PageState.LOADING);
+  void showLoading() => updatePageState(PageState.LOADING);
 
-  hideLoading() => resetPageState();
+  void hideLoading() => resetPageState();
 
   final _messageController = ''.obs;
 
   String get message => _messageController.value;
 
-  showMessage(String msg) => _messageController(msg);
+  String showMessage(String msg) => _messageController(msg);
 
   final _errorMessageController = ''.obs;
 
   String get errorMessage => _errorMessageController.value;
 
-  showErrorMessage(String msg) {
+  void showErrorMessage(String msg) {
     _errorMessageController(msg);
   }
 
@@ -40,7 +40,7 @@ abstract class BaseController extends GetxController {
 
   String get successMessage => _messageController.value;
 
-  showSuccessMessage(String msg) => _successMessageController(msg);
+  void showSuccessMessage(String msg) => _successMessageController(msg);
 
   @override
   void onClose() {
