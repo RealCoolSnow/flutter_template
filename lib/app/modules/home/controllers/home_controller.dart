@@ -1,6 +1,6 @@
 import 'package:common/utils/toast.dart';
-import 'package:flutter_template/app/core/app_singletons.dart';
-import 'package:flutter_template/app/data/local/preference/preference_key.dart';
+import '/app/core/app_singletons.dart';
+import '/app/data/local/preference/preference_key.dart';
 
 import '/app/routes/app_pages.dart';
 

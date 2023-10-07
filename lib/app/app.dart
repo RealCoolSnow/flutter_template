@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter_template/app/data/local/preference/preference_key.dart';
+import '/app/data/local/preference/preference_key.dart';
 
 import '/app/core/styles/app_color.dart';
 import '/app/core/styles/app_theme.dart';
