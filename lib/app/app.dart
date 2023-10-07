@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:flutter_template/app/data/local/preference/preference_key.dart';
+
 import '/app/core/styles/app_color.dart';
 import '/app/core/styles/app_theme.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -13,6 +15,7 @@ import '/app/routes/app_pages.dart';
 import '/flavors/build_config.dart';
 import '/flavors/env_config.dart';
 import 'core/app_locale.dart';
+import 'core/app_singletons.dart';
 
 class App extends StatefulWidget {
   const App({Key? key}) : super(key: key);
@@ -44,6 +47,7 @@ class AppState extends State<App> {
       systemNavigationBarIconBrightness: Brightness.light,
     ));
   }
+
   @override
   Widget build(BuildContext context) {
     setOverlayStyle();
@@ -70,6 +74,8 @@ class AppEntry {
         Zone.current.handleUncaughtError(details.exception, details.stack!);
       }
     };
+    preferenceManager.setString(
+        PreferenceKey.launchTime, DateTime.now().toString());
     // runZonedGuarded<Future<Null>>(() async {
     runApp($locale.wrapApp(appMain));
     // }, (error, stackTrace) async {
@@ -88,6 +94,7 @@ class AppEntry {
 Future<void> startApp() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  registerSingletons();
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown

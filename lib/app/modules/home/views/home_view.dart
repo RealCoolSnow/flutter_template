@@ -38,7 +38,14 @@ class HomeView extends BaseView<HomeController> {
             child: ElevatedButton(
               onPressed: () => controller.pagingDemo(),
               child: const Text("Paging Demo"),
-            ))
+            )),
+        Padding(
+          padding: EdgeInsets.only(top: AppSize.padding),
+          child: ElevatedButton(
+            onPressed: () => controller.showLaunchTime(),
+            child: const Text("Launch Time"),
+          ),
+        )
       ]),
     );
   }
