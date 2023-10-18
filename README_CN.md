@@ -63,7 +63,7 @@ flutter pub run easy_localization:generate --source-dir assets/locales  -f keys 
 
 ## build model
 
-`flutter pub run build_runner build --delete-conflicting-outputs`
+`flutter pub run build_runner build`
 
 ## 一键生成或更新model、多语言、资源
 执行 `gen.sh`
