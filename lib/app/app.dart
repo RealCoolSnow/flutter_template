@@ -54,7 +54,7 @@ class AppState extends State<App> {
     return wrapScreenUtil(GetMaterialApp(
       title: _envConfig.appName,
       initialRoute: AppPages.INITIAL,
-      // initialBinding: InitialBinding(),
+      binds: InitialBinding().dependencies(),
       getPages: AppPages.routes,
       localizationsDelegates: context.localizationDelegates,
       supportedLocales: context.supportedLocales,

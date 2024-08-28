@@ -1,9 +1,11 @@
 import 'package:get/get.dart';
 
 
-class InitialBinding implements Bindings {
+class InitialBinding implements Binding {
   @override
-  void dependencies() {
+  List<Bind> dependencies() {
     // TODO: implement dependencies
+    // throw UnimplementedError();
+    return [];
   }
 }
