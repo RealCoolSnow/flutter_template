@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+
 import '/app/core/styles/app_size.dart';
 import '/app/common_import.dart';
 import 'package:flutter/material.dart';

@@ -1,3 +1,5 @@
+import 'package:get/get.dart';
+
 import '../../../core/styles/app_size.dart';
 import '../../../core/styles/app_textstyle.dart';
 import '/app/common_import.dart';
