@@ -4,7 +4,6 @@ import '/app/data/local/preference/preference_key.dart';
 
 import '/app/routes/app_pages.dart';
 
-import '/app/data/services/api/user_api.dart';
 import 'package:get/get.dart';
 
 import '../../../core/base/controller/base_controller.dart';
@@ -15,12 +14,7 @@ class HomeController extends BaseController {
   void increment() => count.value++;
 
   void login() {
-    showLoading();
-    UserApi().login(username: 'abc', password: '123456').then((res) {
-      hideLoading();
-    }).catchError((err) {
-      hideLoading();
-    });
+    Get.toNamed(Routes.LOGIN);
   }
 
   void pagingDemo() {

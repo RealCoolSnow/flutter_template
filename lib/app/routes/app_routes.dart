@@ -9,6 +9,7 @@ abstract class Routes {
   static const FAVORITE = _Paths.FAVORITE;
   static const SETTINGS = _Paths.SETTINGS;
   static const PAGING_DEMO = _Paths.PAGING_DEMO;
+  static const LOGIN = _Paths.LOGIN;
 }
 
 abstract class _Paths {
@@ -17,4 +18,5 @@ abstract class _Paths {
   static const FAVORITE = '/favorite';
   static const SETTINGS = '/settings';
   static const PAGING_DEMO = '/paging-demo';
+  static const LOGIN = '/login';
 }

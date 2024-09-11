@@ -12,7 +12,6 @@ class SettingsView extends BaseView<SettingsController> {
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
       appBarTitleText: tr(LocaleKeys.settings),
-      isBackButtonEnabled: false,
     );
   }
 
@@ -63,5 +62,4 @@ class SettingsView extends BaseView<SettingsController> {
   void _onFontSizeItemClicked() {
     showToast('Font Size: Development in progress');
   }
-
 }

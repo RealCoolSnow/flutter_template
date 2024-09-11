@@ -5,5 +5,8 @@
   "theme": "主题",
   "language": "语言",
   "font_size": "字体",
-  "click_me": "点我 {count}"
+  "click_me": "点我 {count}",
+  "account": "账号",
+  "password": "密码",
+  "login": "登录"
 }

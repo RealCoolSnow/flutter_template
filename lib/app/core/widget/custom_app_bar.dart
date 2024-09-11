@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../styles/app_color.dart';
 import '/app/core/widget/app_bar_title.dart';
 
@@ -6,13 +7,11 @@ import '/app/core/widget/app_bar_title.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String appBarTitleText;
   final List<Widget>? actions;
-  final bool isBackButtonEnabled;
 
   const CustomAppBar({
     Key? key,
     required this.appBarTitleText,
     this.actions,
-    this.isBackButtonEnabled = true,
   }) : super(key: key);
 
   @override
@@ -20,13 +19,22 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ModalRoute<dynamic>? parentRoute = ModalRoute.of(context);
+    final bool canPop = parentRoute?.canPop ?? false;
+
     return AppBar(
       backgroundColor: AppColor.primary,
       centerTitle: true,
       elevation: 0,
-      automaticallyImplyLeading: isBackButtonEnabled,
+      automaticallyImplyLeading: false,
+      leading: canPop
+          ? IconButton(
+              icon: const Icon(Icons.arrow_back, color: Colors.white),
+              onPressed: () => Get.back(),
+            )
+          : null,
       actions: actions,
-      iconTheme: const IconThemeData(color: AppColor.primary),
+      iconTheme: const IconThemeData(color: Colors.white),
       title: AppBarTitle(text: appBarTitleText),
     );
   }

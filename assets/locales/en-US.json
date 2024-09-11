@@ -5,5 +5,8 @@
   "theme": "Theme",
   "language": "Language",
   "font_size": "Font Size",
-  "click_me": "Click me {count}"
+  "click_me": "Click me {count}",
+  "account": "Account",
+  "password": "Password",
+  "login": "Login"
 }

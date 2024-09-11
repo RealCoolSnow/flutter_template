@@ -1,3 +1,5 @@
+import 'package:flutter_template/app/modules/login/bindings/login_binding.dart';
+import 'package:flutter_template/app/modules/login/views/login_view.dart';
 import 'package:get/get.dart';
 
 import '/app/modules/paging-demo/bindings/paging_demo_binding.dart';
@@ -43,6 +45,11 @@ class AppPages {
       name: _Paths.PAGING_DEMO,
       page: () => const PagingDemoView(),
       binding: PagingDemoBinding(),
+    ),
+    GetPage(
+      name: _Paths.LOGIN,
+      page: () => LoginView(),
+      binding: LoginBinding(),
     ),
   ];
 }
