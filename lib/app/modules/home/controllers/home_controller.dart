@@ -1,4 +1,5 @@
-import 'package:common/utils/toast.dart';
+import 'package:common/utils/toast_util.dart';
+import 'package:flutter_template/app/routes/app_router.dart';
 import '/app/core/app_singletons.dart';
 import '/app/data/local/preference/preference_key.dart';
 
@@ -23,7 +24,11 @@ class HomeController extends BaseController {
 
   void showLaunchTime() {
     preferenceManager.getString(PreferenceKey.launchTime).then((value) {
-      showToast(value);
+      ToastUtil.show(value);
     });
+  }
+
+  void showWebView() {
+    AppRouter.showWebView('https://www.baidu.com');
   }
 }

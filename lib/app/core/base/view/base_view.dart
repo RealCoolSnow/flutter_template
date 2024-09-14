@@ -17,19 +17,16 @@ abstract class BaseView<Controller extends BaseController>
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      child: Stack(
-        children: [
-          annotatedRegion(context),
-          Obx(() => controller.pageState == PageState.LOADING
-              ? _showLoading()
-              : Container()),
-          Obx(() => controller.errorMessage.isNotEmpty
-              ? showErrorSnackBar(controller.errorMessage)
-              : Container()),
-          Container(),
-        ],
-      ),
+    return Stack(
+      children: [
+        annotatedRegion(context),
+        Obx(() => controller.pageState == PageState.LOADING
+            ? _showLoading()
+            : Container()),
+        Obx(() => controller.errorMessage.isNotEmpty
+            ? showErrorSnackBar(controller.errorMessage)
+            : Container()),
+      ],
     );
   }
 
@@ -80,7 +77,7 @@ abstract class BaseView<Controller extends BaseController>
   }
 
   Color statusBarColor() {
-    return AppColor.pageBackground;
+    return AppColor.primary;
   }
 
   Widget? floatingActionButton() {

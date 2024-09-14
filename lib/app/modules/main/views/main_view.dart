@@ -26,7 +26,6 @@ class MainView extends BaseView<MainController> {
 
   @override
   Widget? bottomNavigationBar() {
-
     return BottomNavBar(onNewMenuSelected: controller.onMenuSelected);
   }
 

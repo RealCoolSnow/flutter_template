@@ -1,6 +1,10 @@
-import 'package:flutter_template/app/modules/login/bindings/login_binding.dart';
-import 'package:flutter_template/app/modules/login/views/login_view.dart';
+import 'package:flutter_template/app/modules/splash/bindings/splash_binding.dart';
+import 'package:flutter_template/app/modules/splash/views/splash_view.dart';
+import 'package:flutter_template/app/modules/user/login/bindings/login_binding.dart';
+import 'package:flutter_template/app/modules/user/login/views/login_view.dart';
 import 'package:get/get.dart';
+import 'package:flutter_template/app/modules/webview/bindings/webview_binding.dart';
+import 'package:flutter_template/app/modules/webview/views/webview_view.dart';
 
 import '/app/modules/paging-demo/bindings/paging_demo_binding.dart';
 import '/app/modules/paging-demo/views/paging_demo_view.dart';
@@ -18,9 +22,14 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.MAIN;
+  static const INITIAL = Routes.SPLASH;
 
   static final routes = [
+    GetPage(
+      name: _Paths.SPLASH,
+      page: () => SplashView(),
+      binding: SplashBinding(),
+    ),
     GetPage(
       name: _Paths.MAIN,
       page: () => MainView(),
@@ -43,13 +52,18 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PAGING_DEMO,
-      page: () => const PagingDemoView(),
+      page: () => PagingDemoView(),
       binding: PagingDemoBinding(),
     ),
     GetPage(
       name: _Paths.LOGIN,
       page: () => LoginView(),
       binding: LoginBinding(),
+    ),
+    GetPage(
+      name: _Paths.WEBVIEW,
+      page: () => WebViewView(),
+      binding: WebViewBinding(),
     ),
   ];
 }

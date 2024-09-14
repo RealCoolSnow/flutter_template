@@ -1,8 +1,8 @@
 import 'package:get/get.dart';
+import 'package:flutter_template/app/core/app_locale.dart';
 
 import '/app/core/styles/app_size.dart';
 import '/app/common_import.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../core/styles/app_color.dart';
 import '/app/modules/main/controllers/bottom_nav_controller.dart';
@@ -21,7 +21,6 @@ class BottomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     Color selectedItemColor = Colors.white;
     Color unselectedItemColor = Colors.grey;
     List<BottomNavItem> navItems = _getNavItems();
@@ -32,14 +31,15 @@ class BottomNavBar extends StatelessWidget {
         items: navItems
             .map(
               (BottomNavItem navItem) => BottomNavigationBarItem(
-                  icon: SvgPicture.asset(
-                    navItem.iconSvgPath,
-                    height: AppSize.iconDefaultSize,
-                    width: AppSize.iconDefaultSize,
-                    colorFilter: ColorFilter.mode(navItems.indexOf(navItem) == navController.selectedIndex
-                            ? selectedItemColor
-                            : unselectedItemColor, BlendMode.srcIn)
-                  ),
+                  icon: SvgPicture.asset(navItem.iconSvgPath,
+                      height: AppSize.iconDefaultSize,
+                      width: AppSize.iconDefaultSize,
+                      colorFilter: ColorFilter.mode(
+                          navItems.indexOf(navItem) ==
+                                  navController.selectedIndex
+                              ? selectedItemColor
+                              : unselectedItemColor,
+                          BlendMode.srcIn)),
                   label: navItem.navTitle,
                   tooltip: ""),
             )
@@ -62,16 +62,16 @@ class BottomNavBar extends StatelessWidget {
   List<BottomNavItem> _getNavItems() {
     return [
       BottomNavItem(
-        navTitle: tr(LocaleKeys.home),
+        navTitle: $locale.t(LocaleKeys.home),
         iconSvgPath: Assets.images.tabIcons.icHome.path,
         menuCode: MenuCode.HOME,
       ),
       BottomNavItem(
-          navTitle: tr(LocaleKeys.favorite),
+          navTitle: $locale.t(LocaleKeys.favorite),
           iconSvgPath: Assets.images.tabIcons.icFavorite.path,
           menuCode: MenuCode.FAVORITE),
       BottomNavItem(
-          navTitle: tr(LocaleKeys.settings),
+          navTitle: $locale.t(LocaleKeys.settings_title),
           iconSvgPath: Assets.images.tabIcons.icSettings.path,
           menuCode: MenuCode.SETTINGS)
     ];

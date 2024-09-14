@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
+import 'package:flutter_template/app/core/app_locale.dart';
 
 import '../../../core/styles/app_size.dart';
 import '../../../core/styles/app_textstyle.dart';
 import '/app/common_import.dart';
-import 'package:flutter/material.dart';
 import '../../../core/base/view/base_view.dart';
 import '/app/core/widget/custom_app_bar.dart';
 import '/app/modules/home/controllers/home_controller.dart';
@@ -12,7 +12,7 @@ class HomeView extends BaseView<HomeController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
-      appBarTitleText: tr(LocaleKeys.home),
+      appBarTitleText: $locale.t(LocaleKeys.home),
     );
   }
 
@@ -23,7 +23,7 @@ class HomeView extends BaseView<HomeController> {
       child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         GestureDetector(
           child: Obx(() => Text(
-                tr(LocaleKeys.click_me,
+                $locale.t(LocaleKeys.click_me,
                     namedArgs: {'count': controller.count.toString()}),
                 style: AppTextStyle.lgBold,
               )),
@@ -33,7 +33,7 @@ class HomeView extends BaseView<HomeController> {
             padding: EdgeInsets.only(top: AppSize.padding),
             child: ElevatedButton(
               onPressed: () => controller.login(),
-              child: const Text("Login"),
+              child: Text($locale.t(LocaleKeys.user_login)),
             )),
         Padding(
             padding: EdgeInsets.only(top: AppSize.padding),
@@ -46,6 +46,13 @@ class HomeView extends BaseView<HomeController> {
           child: ElevatedButton(
             onPressed: () => controller.showLaunchTime(),
             child: const Text("Launch Time"),
+          ),
+        ),
+        Padding(
+          padding: EdgeInsets.only(top: AppSize.padding),
+          child: ElevatedButton(
+            onPressed: () => controller.showWebView(),
+            child: const Text("WebView"),
           ),
         )
       ]),

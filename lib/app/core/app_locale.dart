@@ -42,10 +42,10 @@ class AppLocale {
   /// $locale.t('name')
   /// $locale.t('name', args: ['Dart'])
   /// $locale.t('name', namedArgs: {'lang': 'Dart'})
-  // String t(
-  //   String name, {
-  //   List<String>? args,
-  //   Map<String, String>? namedArgs,
-  // }) =>
-  //     tr(name, args: args, namedArgs: namedArgs);
+  String t(
+    String name, {
+    List<String>? args,
+    Map<String, String>? namedArgs,
+  }) =>
+      tr(name, args: args, namedArgs: namedArgs);
 }

@@ -5,13 +5,15 @@ part 'base_resp.g.dart';
 
 @JsonSerializable(genericArgumentFactories: true)
 class BaseResp<T> {
-  final String msg;
+  final String message;
   final int code;
   T? data;
 
   bool isSuccess() => this.code == ErrorCode.Success;
 
-  BaseResp({required this.msg, required this.code, this.data});
+  String get msg => this.message;
+
+  BaseResp({required this.message, required this.code, this.data});
   factory BaseResp.fromJson(
           Map<String, dynamic> json, T Function(dynamic json) fromJsonT) =>
       _$BaseRespFromJson(json, fromJsonT);

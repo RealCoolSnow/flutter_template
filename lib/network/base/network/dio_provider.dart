@@ -29,16 +29,14 @@ class DioProvider {
   static Dio get httpDio {
     if (_instance == null) {
       _instance = Dio(_options);
-
-      _instance!.interceptors.add(_prettyDioLogger);
-
-      return _instance!;
     } else {
       _instance!.interceptors.clear();
-      _instance!.interceptors.add(_prettyDioLogger);
-
-      return _instance!;
     }
+    if (!BuildConfig.instance.isProd) {
+      _instance!.interceptors.add(_prettyDioLogger);
+    }
+
+    return _instance!;
   }
 
   ///returns a Dio client with Access token in header

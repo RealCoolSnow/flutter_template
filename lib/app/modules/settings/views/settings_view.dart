@@ -1,7 +1,8 @@
-import 'package:common/utils/toast.dart';
+import 'package:common/common_lib.dart';
+import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter_template/app/core/app_locale.dart';
 
 import '/app/common_import.dart';
-import 'package:flutter/material.dart';
 import '/app/modules/settings/widgets/item_settings_widgets.dart';
 import '../../../core/base/view/base_view.dart';
 import '/app/core/widget/custom_app_bar.dart';
@@ -11,7 +12,7 @@ class SettingsView extends BaseView<SettingsController> {
   @override
   PreferredSizeWidget? appBar(BuildContext context) {
     return CustomAppBar(
-      appBarTitleText: tr(LocaleKeys.settings),
+      appBarTitleText: tr(LocaleKeys.settings_title),
     );
   }
 
@@ -20,14 +21,14 @@ class SettingsView extends BaseView<SettingsController> {
     return Column(
       children: [
         ItemSettings(
-          title: tr(LocaleKeys.theme),
+          title: $locale.t(LocaleKeys.settings_theme),
           prefixImage: Assets.images.icTheme.path,
           suffixImage: Assets.images.arrowForward.path,
           onTap: _onThemeItemClicked,
         ),
         _getHorizontalDivider(),
         ItemSettings(
-          title: tr(LocaleKeys.language),
+          title: $locale.t(LocaleKeys.settings_language),
           prefixImage: Assets.images.icLanguage.path,
           suffixImage: Assets.images.arrowForward.path,
           onTap: () {
@@ -36,7 +37,7 @@ class SettingsView extends BaseView<SettingsController> {
         ),
         _getHorizontalDivider(),
         ItemSettings(
-          title: tr(LocaleKeys.font_size),
+          title: tr(LocaleKeys.settings_font_size),
           prefixImage: Assets.images.icFontSize.path,
           suffixImage: Assets.images.arrowForward.path,
           onTap: _onFontSizeItemClicked,
@@ -51,7 +52,7 @@ class SettingsView extends BaseView<SettingsController> {
   }
 
   void _onThemeItemClicked() {
-    showToast('Theme: Development in progress');
+    ToastUtil.show('Theme: Development in progress');
   }
 
   void _onLanguageItemClicked(BuildContext context) {
@@ -60,6 +61,6 @@ class SettingsView extends BaseView<SettingsController> {
   }
 
   void _onFontSizeItemClicked() {
-    showToast('Font Size: Development in progress');
+    ToastUtil.show('Font Size: Development in progress');
   }
 }

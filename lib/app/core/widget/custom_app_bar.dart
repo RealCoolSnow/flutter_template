@@ -7,11 +7,14 @@ import '/app/core/widget/app_bar_title.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String appBarTitleText;
   final List<Widget>? actions;
-
+  final Widget? appBarTitle;
+  final VoidCallback? onPop;
   const CustomAppBar({
     Key? key,
     required this.appBarTitleText,
     this.actions,
+    this.appBarTitle,
+    this.onPop,
   }) : super(key: key);
 
   @override
@@ -30,12 +33,12 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: canPop
           ? IconButton(
               icon: const Icon(Icons.arrow_back, color: Colors.white),
-              onPressed: () => Get.back(),
+              onPressed: onPop ?? () => Get.back(),
             )
           : null,
       actions: actions,
       iconTheme: const IconThemeData(color: Colors.white),
-      title: AppBarTitle(text: appBarTitleText),
+      title: appBarTitle ?? AppBarTitle(text: appBarTitleText),
     );
   }
 }

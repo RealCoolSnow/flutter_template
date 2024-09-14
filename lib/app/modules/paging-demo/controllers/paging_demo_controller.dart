@@ -1,10 +1,20 @@
 import 'package:get/get.dart';
 
-import '/app/data/services/model/user/user_info_model.dart';
+import '../../../data/services/model/user_info_model.dart';
 import '/app/core/base/controller/base_paging_controller.dart';
 
 class PagingDemoController extends BasePagingController<UserInfoModel> {
   final refreshCount = 0.obs;
+
+  @override
+  void onInit() {
+    showLoading();
+    Future.delayed(Duration(seconds: 2), () {
+      hideLoading();
+    });
+    super.onInit();
+  }
+
   @override
   void fetchPage(int pageKey) {
     List<UserInfoModel> list = [];
@@ -19,8 +29,9 @@ class PagingDemoController extends BasePagingController<UserInfoModel> {
   }
 
   @override
-  void refreshPage() {
+  bool refreshPage(bool isRefresh) {
     getPagingController().refresh();
+    return true;
   }
 
   void incrementCount() => refreshCount.value++;

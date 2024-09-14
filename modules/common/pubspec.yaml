@@ -11,8 +11,15 @@ dependencies:
   flutter:
     sdk: flutter
   # https://pub-web.flutter-io.cn/packages/fluttertoast
-  fluttertoast: ^8.2.2
-  
+  fluttertoast: ^8.2.8
+  # https://pub-web.flutter-io.cn/packages/flutter_easyloading
+  flutter_easyloading: ^3.0.5
+  # https://pub-web.flutter-io.cn/packages/event_bus
+  event_bus: ^2.0.0
+  # https://pub-web.flutter-io.cn/packages/url_launcher
+  url_launcher: ^6.3.0
+    # https://pub.flutter-io.cn/packages/device_info_plus
+  device_info_plus: ^10.1.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

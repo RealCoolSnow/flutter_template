@@ -1,4 +1,4 @@
-import 'package:common/utils/debouncer.dart';
+import 'package:common/common_lib.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

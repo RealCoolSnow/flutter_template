@@ -1,12 +1,21 @@
 {
+  "app_name": "flutter_template",
   "home": "首页",
   "favorite": "喜欢",
-  "settings": "设置",
-  "theme": "主题",
-  "language": "语言",
-  "font_size": "字体",
   "click_me": "点我 {count}",
-  "account": "账号",
-  "password": "密码",
-  "login": "登录"
+  "settings": {
+    "title": "设置",
+    "theme": "主题",
+    "language": "语言",
+    "font_size": "字体"
+  },
+  "user": {
+    "account": "账号",
+    "account_hint": "请输入账号",
+    "password": "密码",
+    "password_hint": "请输入密码",
+    "login": "登录",
+    "register": "注册"
+  },
+  "loading": "加载中..."
 }

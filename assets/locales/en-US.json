@@ -1,12 +1,21 @@
 {
+  "app_name": "flutter_template",
   "home": "Home",
   "favorite": "Favorite",
-  "settings": "Settings",
-  "theme": "Theme",
-  "language": "Language",
-  "font_size": "Font Size",
   "click_me": "Click me {count}",
-  "account": "Account",
-  "password": "Password",
-  "login": "Login"
+  "settings": {
+    "title": "Settings",
+    "theme": "Theme",
+    "language": "Language",
+    "font_size": "Font Size"
+  },
+  "user": {
+    "account": "Account",
+    "account_hint": "Please enter your account",
+    "password": "Password",
+    "password_hint": "Please enter your password",
+    "login": "Login",
+    "register": "Register"
+  },
+  "loading": "Loading..."
 }

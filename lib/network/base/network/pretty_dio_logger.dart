@@ -39,6 +39,7 @@ class PrettyDioLogger extends Interceptor {
 
   static const int defaultMaxWidth = 90;
   static const int maxListLength = 10;
+
   /// Log printer; defaults logPrint log to console.
   /// In flutter, you'd better use debugPrint.
   /// you can also write log in a file.
@@ -140,19 +141,20 @@ class PrettyDioLogger extends Interceptor {
 
   void _printResponse(Response response) {
     if (response.data != null) {
-      if (response.data is Map) {
-        _printPrettyMap(response.data as Map);
-      } else if (response.data is Uint8List) {
-        logPrint('║${_indent()}[');
-        _printUint8List(response.data as Uint8List);
-        logPrint('║${_indent()}]');
-      } else if (response.data is List) {
-        logPrint('║${_indent()}[');
-        _printList(response.data as List);
-        logPrint('║${_indent()}]');
-      } else {
-        _printBlock(response.data.toString());
-      }
+      // if (response.data is Map) {
+      //   _printPrettyMap(response.data as Map);
+      // } else if (response.data is Uint8List) {
+      //   logPrint('║${_indent()}[');
+      //   _printUint8List(response.data as Uint8List);
+      //   logPrint('║${_indent()}]');
+      // } else if (response.data is List) {
+      //   logPrint('║${_indent()}[');
+      //   _printList(response.data as List);
+      //   logPrint('║${_indent()}]');
+      // } else {
+      //   _printBlock(response.data.toString());
+      // }
+      logPrint(response.data.toString());
     }
   }
 
@@ -257,7 +259,8 @@ class PrettyDioLogger extends Interceptor {
         if (compact && _canFlattenMap(e)) {
           logPrint('║${_indent(tabs)}  $e${!isLast ? ',' : ''}');
         } else {
-          _printPrettyMap(e, initialTab: tabs + 1, isListItem: true, isLast: isLast);
+          _printPrettyMap(e,
+              initialTab: tabs + 1, isListItem: true, isLast: isLast);
         }
       } else {
         logPrint('║${_indent(tabs + 2)} $e${isLast ? '' : ','}');

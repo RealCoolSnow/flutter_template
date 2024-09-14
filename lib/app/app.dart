@@ -1,4 +1,7 @@
 import 'dart:async';
+import 'package:common/utils/platform_util.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 import '/app/data/local/preference/preference_key.dart';
 
@@ -61,6 +64,8 @@ class AppState extends State<App> {
       locale: context.locale,
       theme: AppTheme.main(),
       debugShowCheckedModeBanner: false,
+      defaultTransition: Transition.cupertino,
+      builder: loadingUtil.init(),
     ));
   }
 }
@@ -91,9 +96,16 @@ class AppEntry {
   // }
 }
 
+Future<void> initInAppWebView() async {
+  if (kDebugMode && PlatformUtil.isAndroid) {
+    await InAppWebViewController.setWebContentsDebuggingEnabled(true);
+  }
+}
+
 Future<void> startApp() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await initInAppWebView();
   registerSingletons();
   await SystemChrome.setPreferredOrientations(<DeviceOrientation>[
     DeviceOrientation.portraitUp,
