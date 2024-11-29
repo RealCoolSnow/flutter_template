@@ -126,4 +126,27 @@ Generate code, corrections, and refactorings that comply with the basic principl
 ﻿
 - Use the standard widget testing for flutter
 - Use integration tests for each api module.
-    
+项目使用了get、dio（网络请求）、shared_preferences（本地存储）、easy_localization（多语言）、cached_network_image（图片缓存）、animations（动画）、flutter_svg（svg图片）、flutter_localizations（多语言）、flutter_svg（svg图片）、flutter_svg（svg图片）
+项目结构如下:
+ |-- gen.sh # 脚本: 生成model、多语言、资源
+    |-- lib
+    |   |-- main_dev.dart
+    |   |-- main_prod.dart
+    |   |-- app # 应用代码
+    |   |   |-- core
+    |   |   |-- data # 数据层
+    |   |   |-- modules #页面 |-- 0-just-copy-it #页面模版
+    |   |   |-- routes # 路由
+    |   |-- config # 配置
+    |   |   |-- dev.dart
+    |   |   |-- prod.dart
+    |   |-- constants # 常量
+    |   |   |-- app_values.dart
+    |   |-- flavors # 构建环境变量
+    |   |   |-- build_config.dart
+    |   |   |-- env_config.dart
+    |   |   |-- environment.dart
+    |   |-- generated # 脚手架自动生成资源、多语言
+    |   |-- network # 通用网络库
+    |-- modules
+    |   |-- common
