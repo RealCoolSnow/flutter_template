@@ -127,6 +127,8 @@ Generate code, corrections, and refactorings that comply with the basic principl
 - Use the standard widget testing for flutter
 - Use integration tests for each api module.
 项目使用了get、dio（网络请求）、shared_preferences（本地存储）、easy_localization（多语言）、cached_network_image（图片缓存）、animations（动画）、flutter_svg（svg图片）、flutter_localizations（多语言）、flutter_svg（svg图片）、flutter_svg（svg图片）
+注意页面的结构，参考lib/app/modules/0-just-copy-it目录下的结构（bindings、controllers、views均使用复数）
+遵循controllers处理逻辑，views负责UI的规范，bindings负责依赖注入，创建新页面的时候要按照这个结构
 项目结构如下:
  |-- gen.sh # 脚本: 生成model、多语言、资源
     |-- lib
